@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it and the underlying datasets/models you use."
+title: "EGO Action Lab: Reproducible Egocentric Action Experiments"
+type: software
+authors:
+  - family-names: Zhang
+    given-names: Chengye
+version: 0.1.0
+license: MPL-2.0
+repository-code: "https://github.com/LilacZhang/ego-action-lab"

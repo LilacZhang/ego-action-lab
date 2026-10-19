@@ -1,0 +1,21 @@
+name: tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  cpu:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install -e '.[dev]'
+      - run: ruff check . && ruff format --check .
+      - run: pytest -q
+      - run: ego-action demo --output /tmp/ego-demo
+      - run: ego-action inspect --data /tmp/ego-demo/prepared
+      - run: python -m build

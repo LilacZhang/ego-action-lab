@@ -1,0 +1,33 @@
+# Local environments / tooling
+.venv*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.DS_Store
+.env
+.env.*
+# User data, checkpoints and generated experiments
+/data/
+/weights/
+/runs/
+/demo/
+*.hdf5
+*.h5
+*.mp4
+*.mov
+*.npy
+*.npz
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.jsonl
+*.log
+*.partial
+*.building/
+# Machine-specific manifests
+/configs/episodes.local.json

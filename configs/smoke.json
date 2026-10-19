@@ -1,0 +1,11 @@
+{
+  "seed": 47,
+  "steps": 2,
+  "batch_size": 1,
+  "warmup_steps": 0,
+  "eval_every": 2,
+  "eval_windows": 2,
+  "samples": 1,
+  "checkpoint_every": 1,
+  "compiled": true
+}

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ego-action-lab"
+version = "0.1.0"
+description = "Reproducible egocentric action modeling and mechanism research"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MPL-2.0"}
+authors = [{name = "Chengye Zhang"}]
+dependencies = ["numpy>=2.0,<3", "h5py>=3.11,<4", "av>=14,<17", "Pillow>=10,<12"]
+
+[project.optional-dependencies]
+mlx = ["mlx==0.32.4; sys_platform == 'darwin' and platform_machine == 'arm64'"]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1", "build>=1,<2"]
+
+[project.scripts]
+ego-action = "ego_action_lab.cli:main"
+
+[project.urls]
+Repository = "https://github.com/LilacZhang/ego-action-lab"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["mlx: requires Apple Silicon MLX"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/test_mlx.py" = ["E402"]

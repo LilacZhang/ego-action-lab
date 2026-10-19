@@ -1,0 +1,6 @@
+{
+  "episodes": [
+    {"split": "train", "session": "REPLACE_WITH_TRAIN_SESSION", "hdf5": "../data/raw/train_clip.hdf5", "video": "../data/raw/train_clip.mp4"},
+    {"split": "validation", "session": "REPLACE_WITH_VALIDATION_SESSION", "hdf5": "../data/raw/val_clip.hdf5", "video": "../data/raw/val_clip.mp4"}
+  ]
+}
